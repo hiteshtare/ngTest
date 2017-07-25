@@ -1,45 +1,49 @@
-import { StorageService } from './shared/services/storage.service';
-import { IndianCurrency } from './shared/pipes/indian-Currency.pipe';
-import { CompanyService } from './shared/services/company.service';
-import { appRoutingProviders, routing } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // animations modules
 import {
-  AutoCompleteModule, ButtonModule, InputTextModule, PanelModule, SliderModule, FieldsetModule
+  AutoCompleteModule, ButtonModule, InputTextModule, PanelModule, SliderModule,
+  FieldsetModule
 } from 'primeng/primeng'; // PrimeNG modules
 
-import { AppComponent } from './app.component';
-import { WelcomeComponent } from './modules/welcome/welcome.component';
-import { PersonalComponent } from './modules/personal/personal.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OccupationComponent } from './modules/occupation/occupation.component';
+import { AppComponent } from './app.component'; // app
+import { appRoutingProviders, routing } from './app.routing'; // routing
+import { ConclusionComponent } from './modules/conclusion/conclusion.component'; // custom components
 import { LoanComponent } from './modules/loan/loan.component';
-import { ConclusionComponent } from './modules/conclusion/conclusion.component'; // animations modules
+import { OccupationComponent } from './modules/occupation/occupation.component';
+import { PersonalComponent } from './modules/personal/personal.component';
+import { WelcomeComponent } from './modules/welcome/welcome.component'; // custom components
+
+import { StorageService } from './shared/services/storage.service'; // custom shared services
+import { CompanyService } from './shared/services/company.service'; // custom shared services
+
+import { IndianCurrency } from './shared/pipes/indian-Currency.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    PersonalComponent,
-    OccupationComponent,
-    LoanComponent,
     ConclusionComponent,
-    IndianCurrency
+    IndianCurrency,
+    LoanComponent,
+    OccupationComponent,
+    PersonalComponent,
+    WelcomeComponent
   ],
   imports: [
+    AutoCompleteModule,
     BrowserModule,
+    ButtonModule,
+    FieldsetModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule,
-    routing,
-    AutoCompleteModule,
-    ButtonModule,
     InputTextModule,
     PanelModule,
+    ReactiveFormsModule,
     SliderModule,
-    FieldsetModule,
+    routing,
     BrowserAnimationsModule
   ],
   providers: [appRoutingProviders, CompanyService, StorageService],

@@ -1,11 +1,10 @@
-import { StorageService } from './../../shared/services/storage.service';
-import { enterAnimation } from './../../shared/animations/enter.animation';
-import { Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {
-  ButtonModule, PanelModule, SliderModule
-} from 'primeng/primeng'; // PrimeNG modules
+import { Router } from '@angular/router';
+import { ButtonModule, PanelModule, SliderModule } from 'primeng/primeng'; // PrimeNG modules
+
+import { StorageService } from './../../shared/services/storage.service';
+import { enterAnimation } from './../../shared/animations/enter.animation';
 
 @Component({
   selector: 'app-loan',
@@ -22,10 +21,10 @@ export class LoanComponent implements OnInit {
   loanAmount = 0;
   existingEMI = 0;
 
-  constructor(private fb: FormBuilder, public router: Router, public storageService: StorageService) { }
+  constructor(private formBuilder: FormBuilder, public router: Router, public storageService: StorageService) { }
 
   ngOnInit() {
-    this.loanForm = this.fb.group({
+    this.loanForm = this.formBuilder.group({
       'loanAmt': [null, Validators.required],
       'existingEMI': [null, Validators.required]
     });
@@ -49,5 +48,4 @@ export class LoanComponent implements OnInit {
   }
 
   get diagnostic() { return JSON.stringify(this.loanForm.value); }
-
 }

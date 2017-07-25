@@ -1,12 +1,11 @@
-import { StorageService } from './../../shared/services/storage.service';
-import { enterAnimation } from './../../shared/animations/enter.animation';
-import { CompanyService } from './../../shared/services/company.service';
-import { Router } from '@angular/router';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {
-  AutoCompleteModule, ButtonModule, InputTextModule, PanelModule
-} from 'primeng/primeng'; // PrimeNG modules
+import { Router } from '@angular/router';
+import { AutoCompleteModule, ButtonModule, InputTextModule, PanelModule } from 'primeng/primeng'; // PrimeNG modules
+
+import { CompanyService } from './../../shared/services/company.service';
+import { StorageService } from './../../shared/services/storage.service';
+import { enterAnimation } from './../../shared/animations/enter.animation';
 
 @Component({
   selector: 'app-occupation',
@@ -22,27 +21,27 @@ export class OccupationComponent implements OnInit {
 
   filteredCompanies: any[];
 
-  constructor(private fb: FormBuilder, public router: Router, public companyService: CompanyService,
+  constructor(private formBuilder: FormBuilder, public router: Router, public companyService: CompanyService,
     public storageService: StorageService) { }
 
   ngOnInit() {
-    this.occupationForm = this.fb.group({
+    this.occupationForm = this.formBuilder.group({
       'companyName': [null, Validators.required]
     });
   }
 
   filterCompany(event) {
-    let query = event.query;
+    const query = event.query;
     this.companyService.getCompanies().then(companies => {
       this.filteredCompanies = this.filterCompanyByKeyword(query, companies);
     });
   }
 
   filterCompanyByKeyword(query, companies: any[]): any[] {
-    let filtered: any[] = [];
+    const filtered: any[] = [];
     for (let i = 0; i < companies.length; i++) {
-      let company = companies[i];
-      if (company.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+      const company = companies[i];
+      if (company.name.toLowerCase().indexOf(query.toLowerCase()) === 0) {
         filtered.push(company.name);
       }
     }

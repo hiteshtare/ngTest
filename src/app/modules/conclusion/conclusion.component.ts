@@ -1,9 +1,8 @@
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FieldsetModule, PanelModule } from 'primeng/primeng'; // PrimeNG modules
+
 import { StorageService } from './../../shared/services/storage.service';
 import { enterAnimation } from './../../shared/animations/enter.animation';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {
-  PanelModule, FieldsetModule
-} from 'primeng/primeng'; // PrimeNG modules
 
 @Component({
   selector: 'app-conclusion',
@@ -18,7 +17,6 @@ export class ConclusionComponent implements OnInit {
   loanAmount = 0;
   existingEMI = 0;
 
-
   constructor(public storageService: StorageService) {
     this.companyName = this.storageService.read<string>('companyName');
 
@@ -28,5 +26,4 @@ export class ConclusionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

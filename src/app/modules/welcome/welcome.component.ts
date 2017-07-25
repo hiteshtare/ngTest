@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  ButtonModule
-} from 'primeng/primeng'; // PrimeNG modules
 import { Router } from '@angular/router';
+import { ButtonModule } from 'primeng/primeng'; // PrimeNG modules
 
 @Component({
   selector: 'app-welcome',
@@ -19,5 +17,4 @@ export class WelcomeComponent implements OnInit {
   navigateToNextScreen() {
     this.router.navigateByUrl('/personal');
   }
-
 }
