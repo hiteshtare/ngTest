@@ -1,0 +1,32 @@
+<form [formGroup]="occupationForm" (ngSubmit)="onSubmit(occupationForm.value)" [@enter]="right">
+  <p-panel header="OCCUPATION DETAILS">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Company Name: <span class="red-ast">*</span>
+        </div>
+        <div class="ui-grid-col-6">
+          <p-autoComplete formControlName="companyName" [suggestions]="filteredCompanies" (completeMethod)="filterCompany($event)"></p-autoComplete>
+        </div>
+        <div class="ui-grid-col-4">
+          <div class="ui-message ui-messages-error ui-corner-all" *ngIf="!occupationForm.controls['companyName'].valid&&occupationForm.controls['companyName'].dirty">
+            <i class="fa fa-close"></i>Company is required
+          </div>
+        </div>
+      </div>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" class="ui-button-warning ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+            [disabled]="!occupationForm.valid" label="Next"></button>
+        </div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+      <div style="text-align:center;margin-top:20px">
+        <!--*ngIf="submitted"-->
+        Form Submitted
+        <br> {{diagnostic}}
+      </div>
+    </div>
+  </p-panel>
+</form>

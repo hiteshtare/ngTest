@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "name": "Tata Consultancy Services",
+            "code": "TCS"
+        },
+        {
+            "name": "WIPRO",
+            "code": "WI"
+        },
+        {
+            "name": "Infosys",
+            "code": "INFI"
+        },
+        {
+            "name": "LNT Infotech",
+            "code": "LNT"
+        },
+        {
+            "name": "Cognizant",
+            "code": "COG"
+        },
+        {
+            "name": "Diebold Nixdorf",
+            "code": "DN"
+        },
+        {
+            "name": "Byzan Systems",
+            "code": "BS"
+        },
+        {
+            "name": "Pegasus Infocorp",
+            "code": "PI"
+        },
+        {
+            "name": "Fractal Ink",
+            "code": "FI"
+        }
+    ]
+}

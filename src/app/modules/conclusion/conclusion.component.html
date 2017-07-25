@@ -1,0 +1,26 @@
+<form [@enter]="right">
+  <p-panel header="CONCLUSION">
+
+    <p-fieldset legend="PERSONAL DETAILS">
+     
+    </p-fieldset>
+    <br>
+    <p-fieldset legend="OCCUPATION DETAILS">
+      <div class="ui-g">
+        <div class="ui-g-6">Company Name</div>
+        <div class="ui-g-6">{{companyName}}</div>
+      </div>
+    </p-fieldset>
+    <br>
+    <p-fieldset legend="LOAN DETAILS">
+       <div class="ui-g">
+        <div class="ui-g-6">Total Loan Amount</div>
+        <div class="ui-g-6">{{loanAmount| indianCurrency}}</div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-6">Existing EMI</div>
+        <div class="ui-g-6">{{existingEMI| indianCurrency}}</div>
+      </div>
+    </p-fieldset>
+  </p-panel>
+</form>
