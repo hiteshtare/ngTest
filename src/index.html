@@ -12,6 +12,18 @@
   <link rel="stylesheet" type="text/css" href="/node_modules/font-awesome/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/themes/omega/theme.css" />
   <link rel="stylesheet" type="text/css" href="/node_modules/primeng/resources/primeng.min.css" />
+
+  <script>
+    // See http://www.backalleycoder.com/2016/05/13/sghpa-the-single-page-app-hack-for-github-pages/
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+
+  </script>
 </head>
 
 <body>
