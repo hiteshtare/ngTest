@@ -1,0 +1,24 @@
+{
+    "INPUT_FIELDS": [
+        {
+            "Name": "First Name",
+            "Type": "text"
+        },
+        {
+            "Name": "Last Name",
+            "Type": "text"
+        },
+        {
+            "Name": "Email",
+            "Type": "text"
+        },
+        {
+            "Name": "Mobile Number",
+            "Type": "text"
+        },
+        {
+            "Name": "Date of Birth (DD/MM/YYYY)",
+            "Type": "text"
+        }
+    ]
+}
