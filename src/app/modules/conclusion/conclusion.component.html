@@ -2,24 +2,43 @@
   <p-panel header="CONCLUSION">
 
     <p-fieldset legend="PERSONAL DETAILS">
-     
+      <div class="ui-g">
+        <div class="ui-g-6">First Name</div>
+        <div class="ui-g-6">{{personal.firstName}}</div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-6">Last Name</div>
+        <div class="ui-g-6">{{personal.lastName}}</div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-6">Email</div>
+        <div class="ui-g-6">{{personal.email}}</div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-6">Mobile No</div>
+        <div class="ui-g-6">{{personal.mobileNo}}</div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-6">Date Of Birth (DD/MM/YYYY)</div>
+        <div class="ui-g-6">{{personal.dob | date: 'dd/MM/yyyy'}}</div>
+      </div>
     </p-fieldset>
     <br>
     <p-fieldset legend="OCCUPATION DETAILS">
       <div class="ui-g">
         <div class="ui-g-6">Company Name</div>
-        <div class="ui-g-6">{{companyName}}</div>
+        <div class="ui-g-6">{{occupation.companyName}}</div>
       </div>
     </p-fieldset>
     <br>
     <p-fieldset legend="LOAN DETAILS">
-       <div class="ui-g">
+      <div class="ui-g">
         <div class="ui-g-6">Total Loan Amount</div>
-        <div class="ui-g-6">{{loanAmount| indianCurrency}}</div>
+        <div class="ui-g-6">{{loan.loanAmount| indianCurrency}}</div>
       </div>
       <div class="ui-g">
         <div class="ui-g-6">Existing EMI</div>
-        <div class="ui-g-6">{{existingEMI| indianCurrency}}</div>
+        <div class="ui-g-6">{{loan.existingEMI| indianCurrency}}</div>
       </div>
     </p-fieldset>
   </p-panel>

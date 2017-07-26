@@ -3,10 +3,10 @@
     <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
       <div class="ui-grid-row">
         <div class="ui-grid-col-2">
-          Loan Amount: <span class="red-ast">*</span>
+          Total Loan Amount: <span class="red-ast">*</span>
         </div>
         <div class="ui-grid-col-6">
-          <p-slider formControlName="loanAmt" [min]="0" [max]="5000" [animate]="true" styleClass="slider-ctrl" (ngModelChange)="onLoanAmountChange($event)"></p-slider>
+          <p-slider formControlName="loanAmount" [min]="0" [max]="5000" [animate]="true" styleClass="slider-ctrl" (ngModelChange)="onLoanAmountChange($event)"></p-slider>
         </div>
         <div class="ui-grid-col-4">
           {{loanAmount | indianCurrency}}

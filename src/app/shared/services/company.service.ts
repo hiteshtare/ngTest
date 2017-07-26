@@ -5,7 +5,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class CompanyService {
 
-  constructor(public http: Http) { }
+  constructor(public http: Http) {
+   }
 
   getCompanies() {
     return this.http.get('assets/data/companies.json')

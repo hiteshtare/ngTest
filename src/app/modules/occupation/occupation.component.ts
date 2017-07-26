@@ -18,7 +18,6 @@ export class OccupationComponent implements OnInit {
 
   submitted: boolean;
   occupationForm: FormGroup;
-
   filteredCompanies: any[];
 
   constructor(private formBuilder: FormBuilder, public router: Router, public companyService: CompanyService,
@@ -51,7 +50,7 @@ export class OccupationComponent implements OnInit {
   onSubmit(value: any) {
     this.submitted = true;
 
-    this.storageService.write('companyName', value.companyName);
+    this.storageService.write('occupation', value);
 
     this.router.navigateByUrl('/loan');
   }

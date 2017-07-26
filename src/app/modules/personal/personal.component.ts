@@ -1,9 +1,13 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ButtonModule, InputTextModule, PanelModule } from 'primeng/primeng'; // PrimeNG modules
+import { DynamicFormControlModel, DynamicFormService } from '@ng2-dynamic-forms/core'; // ng2 dynamic form
 
+import { JsonService } from './../../shared/services/json.service';
+import { StorageService } from './../../shared/services/storage.service';
 import { enterAnimation } from './../../shared/animations/enter.animation';
+import { PERSONAL_DYNAMIC_FORM_MODEL } from './personal-dynamic-form.model';
 
 @Component({
   selector: 'app-personal',
@@ -15,20 +19,28 @@ import { enterAnimation } from './../../shared/animations/enter.animation';
 export class PersonalComponent implements OnInit {
 
   submitted: boolean;
+  formModel: DynamicFormControlModel[] = PERSONAL_DYNAMIC_FORM_MODEL;
+  // formModel: DynamicFormControlModel[];
   personalForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, public router: Router) { }
+  constructor(private dynamicFormService: DynamicFormService, public jsonService: JsonService,
+    public router: Router, public storageService: StorageService) { }
 
   ngOnInit() {
-    this.personalForm = this.formBuilder.group({
-      'firstname': [null, Validators.required],
-      'lastname': [null, Validators.required],
-      'password': [null, Validators.compose([Validators.required, Validators.minLength(6)])]
-    });
+    if (this.jsonService.config.length === this.formModel.length) {
+      console.log('MATCH FOUND :-)');
+    } else {
+      console.log('NO MATCH :-(');
+    }
+
+    this.personalForm = this.dynamicFormService.createFormGroup(this.formModel);
   }
 
   onSubmit(value: string) {
     this.submitted = true;
+
+    this.storageService.write('personal', value);
+
     this.router.navigateByUrl('/occupation');
   }
 

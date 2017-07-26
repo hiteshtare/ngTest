@@ -17,7 +17,6 @@ export class LoanComponent implements OnInit {
 
   submitted: boolean;
   loanForm: FormGroup;
-
   loanAmount = 0;
   existingEMI = 0;
 
@@ -25,7 +24,7 @@ export class LoanComponent implements OnInit {
 
   ngOnInit() {
     this.loanForm = this.formBuilder.group({
-      'loanAmt': [null, Validators.required],
+      'loanAmount': [null, Validators.required],
       'existingEMI': [null, Validators.required]
     });
   }
@@ -41,8 +40,10 @@ export class LoanComponent implements OnInit {
   onSubmit(value: string) {
     this.submitted = true;
 
-    this.storageService.write('loanAmount', this.loanAmount);
-    this.storageService.write('existingEMI', this.existingEMI);
+    value['loanAmount'] = this.loanAmount;
+    value['existingEMI'] = this.existingEMI;
+
+    this.storageService.write('loan', value);
 
     this.router.navigateByUrl('/conclusion');
   }

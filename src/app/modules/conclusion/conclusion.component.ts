@@ -13,15 +13,14 @@ import { enterAnimation } from './../../shared/animations/enter.animation';
 })
 export class ConclusionComponent implements OnInit {
 
-  companyName = '';
-  loanAmount = 0;
-  existingEMI = 0;
+  personal = '';
+  occupation = '';
+  loan = '';
 
   constructor(public storageService: StorageService) {
-    this.companyName = this.storageService.read<string>('companyName');
-
-    this.loanAmount = this.storageService.read<number>('loanAmount');
-    this.existingEMI = this.storageService.read<number>('existingEMI');
+    this.personal = this.storageService.read<string>('personal');
+    this.occupation = this.storageService.read<string>('occupation');
+    this.loan = this.storageService.read<string>('loan');
   }
 
   ngOnInit() {
