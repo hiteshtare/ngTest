@@ -18,7 +18,6 @@ import { PERSONAL_DYNAMIC_FORM_MODEL } from './personal-dynamic-form.model';
 })
 export class PersonalComponent implements OnInit {
 
-  submitted: boolean;
   formModel: DynamicFormControlModel[] = PERSONAL_DYNAMIC_FORM_MODEL;
   // formModel: DynamicFormControlModel[];
   personalForm: FormGroup;
@@ -37,8 +36,6 @@ export class PersonalComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.submitted = true;
-
     this.storageService.write('personal', value);
 
     this.router.navigateByUrl('/occupation');

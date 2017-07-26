@@ -16,7 +16,6 @@ import { enterAnimation } from './../../shared/animations/enter.animation';
 })
 export class OccupationComponent implements OnInit {
 
-  submitted: boolean;
   occupationForm: FormGroup;
   filteredCompanies: any[];
 
@@ -48,8 +47,6 @@ export class OccupationComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    this.submitted = true;
-
     this.storageService.write('occupation', value);
 
     this.router.navigateByUrl('/loan');

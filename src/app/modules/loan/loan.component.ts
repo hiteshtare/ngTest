@@ -15,7 +15,6 @@ import { enterAnimation } from './../../shared/animations/enter.animation';
 })
 export class LoanComponent implements OnInit {
 
-  submitted: boolean;
   loanForm: FormGroup;
   loanAmount = 0;
   existingEMI = 0;
@@ -38,7 +37,6 @@ export class LoanComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.submitted = true;
 
     value['loanAmount'] = this.loanAmount;
     value['existingEMI'] = this.existingEMI;
