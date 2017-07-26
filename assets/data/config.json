@@ -1,24 +1,50 @@
 {
-    "INPUT_FIELDS": [
+    "fields": [
         {
-            "Name": "First Name",
-            "Type": "text"
+            "type": "input",
+            "id": "firstName",
+            "label": "First Name",
+            "placeholder": "Enter your first name",
+            "validators": {
+                "required": null
+            }
         },
         {
-            "Name": "Last Name",
-            "Type": "text"
+            "type": "input",
+            "id": "lastName",
+            "label": "Last Name",
+            "placeholder": "Enter your last name",
+            "validators": {
+                "required": null
+            }
         },
         {
-            "Name": "Email",
-            "Type": "text"
+            "type": "input",
+            "id": "email",
+            "label": "Email",
+            "placeholder": "Enter your email",
+            "validators": {
+                "required": null
+            }
         },
         {
-            "Name": "Mobile Number",
-            "Type": "text"
+            "type": "input",
+            "id": "mobileNo",
+            "label": "Mobile No",
+            "placeholder": "Enter your mobile no",
+            "validators": {
+                "required": null
+            }
         },
         {
-            "Name": "Date of Birth (DD/MM/YYYY)",
-            "Type": "text"
+            "type": "datepicker",
+            "id": "dob",
+            "label": "Date Of Birth (DD/MM/YYYY)",
+            "placeholder": "Enter your Date of Birth",
+            "validators": {
+                "required": null
+            },
+            "format": "dd/mm/yy"
         }
     ]
 }
