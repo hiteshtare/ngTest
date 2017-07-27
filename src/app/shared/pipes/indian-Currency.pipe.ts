@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'indianCurrency' })
-export class IndianCurrency implements PipeTransform {
+export class IndianCurrencyPipe implements PipeTransform {
     transform(value: number, args: string[]): any {
 
         if (!isNaN(value)) {

@@ -1,44 +1,62 @@
 <form [@enter]="right">
   <p-panel header="CONCLUSION">
 
-    <p-fieldset legend="PERSONAL DETAILS">
-      <div class="ui-g">
-        <div class="ui-g-6">First Name</div>
-        <div class="ui-g-6">{{personal.firstName}}</div>
+    <p-fieldset id="fieldsetPersonal" legend="PERSONAL DETAILS">
+      <div *ngIf="personal">
+        <div class="ui-g">
+          <div class="ui-g-6"><label>First Name</label></div>
+          <div class="ui-g-6">{{personal.firstName}}</div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Last Name</label></div>
+          <div class="ui-g-6">{{personal.lastName}}</div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Email</label></div>
+          <div class="ui-g-6">{{personal.email}}</div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Mobile No</label></div>
+          <div class="ui-g-6">{{personal.mobileNo}}</div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Date Of Birth (DD/MM/YYYY)</label></div>
+          <div class="ui-g-6">{{personal.dob | date: 'dd/MM/yyyy'}}</div>
+        </div>
+
       </div>
-      <div class="ui-g">
-        <div class="ui-g-6">Last Name</div>
-        <div class="ui-g-6">{{personal.lastName}}</div>
-      </div>
-      <div class="ui-g">
-        <div class="ui-g-6">Email</div>
-        <div class="ui-g-6">{{personal.email}}</div>
-      </div>
-      <div class="ui-g">
-        <div class="ui-g-6">Mobile No</div>
-        <div class="ui-g-6">{{personal.mobileNo}}</div>
-      </div>
-      <div class="ui-g">
-        <div class="ui-g-6">Date Of Birth (DD/MM/YYYY)</div>
-        <div class="ui-g-6">{{personal.dob | date: 'dd/MM/yyyy'}}</div>
+      <div *ngIf="!personal">
+        <div class="ui-g-12">No data found.</div>
       </div>
     </p-fieldset>
     <br>
     <p-fieldset legend="OCCUPATION DETAILS">
-      <div class="ui-g">
-        <div class="ui-g-6">Company Name</div>
-        <div class="ui-g-6">{{occupation.companyName}}</div>
+      <div *ngIf="occupation">
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Company Name</label></div>
+          <div class="ui-g-6">{{occupation.companyName}}</div>
+        </div>
+      </div>
+
+      <div *ngIf="!occupation">
+        <div class="ui-g-12">No data found.</div>
       </div>
     </p-fieldset>
     <br>
     <p-fieldset legend="LOAN DETAILS">
-      <div class="ui-g">
-        <div class="ui-g-6">Total Loan Amount</div>
-        <div class="ui-g-6">{{loan.loanAmount| indianCurrency}}</div>
+      <div *ngIf="loan">
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Total Loan Amount</label></div>
+          <div class="ui-g-6">{{loan.loanAmount| indianCurrency}}</div>
+        </div>
+        <div class="ui-g">
+          <div class="ui-g-6"><label>Existing EMI</label></div>
+          <div class="ui-g-6">{{loan.existingEMI| indianCurrency}}</div>
+        </div>
       </div>
-      <div class="ui-g">
-        <div class="ui-g-6">Existing EMI</div>
-        <div class="ui-g-6">{{loan.existingEMI| indianCurrency}}</div>
+
+      <div *ngIf="!loan">
+        <div class="ui-g-12">No data found.</div>
       </div>
     </p-fieldset>
   </p-panel>

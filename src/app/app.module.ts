@@ -23,13 +23,13 @@ import { CompanyService } from './shared/services/company.service'; // custom sh
 import { JsonService } from './shared/services/json.service';
 import { StorageService } from './shared/services/storage.service'; // custom shared services
 
-import { IndianCurrency } from './shared/pipes/indian-Currency.pipe';
+import { IndianCurrencyPipe } from './shared/pipes/indian-currency.pipe'; // custom pipes
 
 @NgModule({
   declarations: [
     AppComponent,
     ConclusionComponent,
-    IndianCurrency,
+    IndianCurrencyPipe,
     LoanComponent,
     OccupationComponent,
     PersonalComponent,
