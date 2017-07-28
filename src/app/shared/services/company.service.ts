@@ -6,8 +6,13 @@ import 'rxjs/add/operator/toPromise';
 export class CompanyService {
 
   constructor(public http: Http) {
-   }
+  }
 
+  /*
+     Desc - For getting list of companies from json file.
+     Called from - occupation.component.ts
+     Outputs - Promise.
+   */
   getCompanies() {
     return this.http.get('assets/data/companies.json')
       .toPromise()

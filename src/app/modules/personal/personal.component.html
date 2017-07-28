@@ -1,18 +1,17 @@
 <form [formGroup]="personalForm" (ngSubmit)="onSubmit(personalForm.value)" [@enter]="right">
-  <dynamic-form-primeng-control *ngFor="let controlModel of formModel" [group]="personalForm" [model]="controlModel"></dynamic-form-primeng-control>
-
-  <br>
-  <div class="ui-grid-row">
-    <div class="ui-grid-col-2"></div>
-    <div class="ui-grid-col-6">
-      <button pButton name="next" type="submit" class="ui-button-warning ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
-        label="Next" [disabled]="!personalForm.valid"></button>
+  <p-panel header="PERSONAL DETAILS">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+      <dynamic-form-primeng-control *ngFor="let controlModel of formModel" [group]="personalForm" [model]="controlModel" [hasErrorMessaging]="controlModel.hasErrorMessages"></dynamic-form-primeng-control>
+      <br>
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">
+          <button pButton name="next" type="submit" class="ui-button-warning ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+            label="Next" [disabled]="!personalForm.valid"></button>
+        </div>
+        <div class="ui-grid-col-4">
+        </div>
+      </div>
     </div>
-    <div class="ui-grid-col-4">
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:20px">
-    Form Submitted
-    <br> {{diagnostic}}
-  </div>
+  </p-panel>
 </form>

@@ -36,6 +36,11 @@ export class JsonService {
     console.log(this.config);
   }
 
+  /*
+      Desc - For getting configuation of input fields from json file.
+      Called from - Own constructor
+      Outputs - Promise.
+    */
   getConfig() {
     return this.http.get('assets/data/config.json')
       .toPromise()

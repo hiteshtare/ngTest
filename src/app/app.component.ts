@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { JsonService } from './shared/services/json.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +7,6 @@ import { JsonService } from './shared/services/json.service';
 })
 export class AppComponent {
 
-  constructor(public jsonService: JsonService) {
+  constructor() {
   }
 }
