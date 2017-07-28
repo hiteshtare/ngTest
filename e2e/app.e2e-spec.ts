@@ -1,14 +1,22 @@
+import { browser } from 'protractor';
 import { NgTestPage } from './app.po';
 
-describe('ng-test App', () => {
+describe('App: ngTest - Welcome Screen', () => {
   let page: NgTestPage;
 
   beforeEach(() => {
     page = new NgTestPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should contain button with text `PROCEED`', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getButtonText()).toEqual('PROCEED');
+  });
+
+  it('should navigate `Personal Details Screen` when `PROCEED` button is clicked', () => {
+    page.navigateTo();
+    page.getProceedButton().click();
+
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl + '/#/personal');
   });
 });

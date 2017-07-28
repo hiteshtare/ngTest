@@ -2,10 +2,14 @@ import { browser, element, by } from 'protractor';
 
 export class NgTestPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/#/welcome');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getButtonText() {
+    return element(by.name('proceed')).getText();
+  }
+
+  getProceedButton() {
+    return element(by.name('proceed'));
   }
 }

@@ -9,6 +9,6 @@ import { JsonService } from './shared/services/json.service';
 })
 export class AppComponent {
 
-  constructor(public jsonService: JsonService)
-  { }
+  constructor(public jsonService: JsonService) {
+  }
 }

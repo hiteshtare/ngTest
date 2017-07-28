@@ -31,6 +31,5 @@ describe('ConclusionComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-    debugger;
   });
 });
