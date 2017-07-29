@@ -5,10 +5,6 @@
             "code": "TCS"
         },
         {
-            "name": "WIPRO",
-            "code": "WI"
-        },
-        {
             "name": "Infosys",
             "code": "INFI"
         },
@@ -35,6 +31,82 @@
         {
             "name": "Fractal Ink",
             "code": "FI"
+        },
+        {
+            "name": "Indian Oil",
+            "code": "IO"
+        },
+        {
+            "name": "Reliance Industries",
+            "code": "RI"
+        },
+        {
+            "name": "Tata Motors",
+            "code": "TM"
+        },
+        {
+            "name": "State Bank Of India",
+            "code": "SBI"
+        },
+        {
+            "name": "Bharat Petroleum",
+            "code": "BP"
+        },
+        {
+            "name": "Hindustan Petroleum",
+            "code": "HP"
+        },
+        {
+            "name": "Rajesh Exports",
+            "code": "RE"
+        },
+        {
+            "name": "Oil & Natural Gas Corp",
+            "code": "ONGC"
+        },
+        {
+            "name": "Tata Steel",
+            "code": "TS"
+        },
+        {
+            "name": "Bharti Airtel",
+            "code": "BA"
+        },
+        {
+            "name": "ICICI Bank",
+            "code": "IB"
+        },
+        {
+            "name": "Bank of India",
+            "code": "BOI"
+        },
+        {
+            "name": "Punjab National Bank",
+            "code": "PNB"
+        },
+        {
+            "name": "Axis Bank",
+            "code": "AB"
+        },
+        {
+            "name": "Mahindra & Mahindra",
+            "code": "MM"
+        },
+        {
+            "name": "Wipro",
+            "code": "W"
+        },
+        {
+            "name": "Vodafone India",
+            "code": "VI"
+        },
+        {
+            "name": "UltraTech Cement",
+            "code": "UC"
+        },
+        {
+            "name": "Cipla",
+            "code": "C"
         }
     ]
 }
